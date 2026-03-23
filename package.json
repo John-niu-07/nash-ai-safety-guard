@@ -1,0 +1,22 @@
+{
+  "name": "nash-guard",
+  "version": "1.0.0",
+  "description": "Nash - AI Safety Guard Service (Jailbreak & Harmful Content Detection)",
+  "main": "src/nash_server.js",
+  "scripts": {
+    "start": "node src/nash_server.js",
+    "dev": "nodemon src/nash_server.js",
+    "test": "node tests/test.js"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.14.0",
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "ai-safety",
+    "jailbreak-detection",
+    "content-moderation"
+  ],
+  "author": "",
+  "license": "MIT"
+}

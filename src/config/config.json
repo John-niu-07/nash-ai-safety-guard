@@ -1,0 +1,25 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8768,
+    "log_file": "../logs/nash.log"
+  },
+  "thresholds": {
+    "block_threshold": 0.1
+  },
+  "risk_patterns": {
+    "jailbreak": [
+      "忽略.*指令",
+      "忽略.*限制",
+      "绕过.*限制",
+      "系统提示",
+      "越狱"
+    ]
+  },
+  "ml_detection": {
+    "weight": 0.3
+  },
+  "ollama": {
+    "enabled": true
+  }
+}
