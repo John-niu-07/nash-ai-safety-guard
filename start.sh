@@ -21,6 +21,12 @@ if [ ! -d "node_modules" ]; then
     npm install
 fi
 
+# 加载环境变量
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    echo "📋 加载 .env 配置..."
+    source "$SCRIPT_DIR/.env"
+fi
+
 # 确保日志目录存在
 mkdir -p logs
 

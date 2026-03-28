@@ -38,7 +38,7 @@ if (!fs.existsSync(logDir)) {
 }
 
 // ============================================================================
-// 初始化 Nash Guard
+// 初始化 Nash Guard (单例模式)
 // ============================================================================
 
 const guard = new NashGuard(CONFIG_FILE);
@@ -49,9 +49,9 @@ const guard = new NashGuard(CONFIG_FILE);
 
 const app = express();
 
-// 动态获取 Guard 实例（每次重新加载配置）
+// 获取 Guard 实例（使用单例，避免重复初始化）
 function getGuard() {
-    return new NashGuard(CONFIG_FILE);
+    return guard;  // ← 返回单例
 }
 
 app.use(express.json());

@@ -111,9 +111,13 @@ class NashGuard {
                 return { score: 0.0, prediction: 'safe' };
             }
             
-            // 查找 toxic/unsafe 标签
+            // 查找 toxic/unsafe 标签（排除 non-toxic 等否定标签）
             const toxicLabel = predictions.find(r => {
                 const label = (r.label || '').toLowerCase();
+                // 排除 "non-toxic" 等否定前缀
+                if (label.startsWith('non-') || label.startsWith('not-') || label.startsWith('not_') || label.startsWith('non_')) {
+                    return false;
+                }
                 return label.includes('toxic') || label.includes('unsafe') || label.includes('hate') || label.includes('threat');
             });
             
