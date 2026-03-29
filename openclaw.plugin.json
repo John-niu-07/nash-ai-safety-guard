@@ -1,0 +1,12 @@
+{
+  "id": "nash",
+  "name": "Nash",
+  "version": "1.0.0",
+  "description": "Nash - AI Safety Guard",
+  "main": "index.js",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
